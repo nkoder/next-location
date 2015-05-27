@@ -17,13 +17,15 @@
     Hello what?
 </div>
 
+<div id="dummy-route-container"></div>
+
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/requirejs/require.js"></script>
 <script src="js/main.js"></script>
 <script>
     $(document).ready(function () {
-        require(['hello/hello-world'], function (helloWorld) {
-            helloWorld.performOn('#main-content');
+        require(['routing'], function (routing) {
+            routing.init();
         });
     });
 </script>

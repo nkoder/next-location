@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 
 var del = require('del');
+var liveServer = require("live-server");
 var mainBowerFiles = require('main-bower-files');
-var webserver = require('gulp-webserver');
 
 var paths = {
   index: 'src/index.html',
@@ -42,12 +42,29 @@ gulp.task('watch', function () {
 });
 
 gulp.task('serve', function () {
-  gulp.src('dist/')
-    .pipe(webserver({
-      livereload: true,
-      directoryListing: true,
-      open: 'index.html'
-    }));
+  liveServer.start({
+    port: 8080,
+    host: "localhost",
+    root: "src/",
+    open: true
+  });
 });
 
-gulp.task('default', ['watch', 'dist:index', 'dist:js', 'dist:bower', 'serve']);
+gulp.task('serve:dist', function () {
+  liveServer.start({
+    port: 8080,
+    host: "localhost",
+    root: "dist/",
+    open: true
+  });
+});
+
+gulp.task('dist', ['dist:index', 'dist:js', 'dist:bower']);
+
+gulp.task('distThenWatch', ['dist'], function () {
+  gulp.run('watch');
+});
+
+gulp.task('default', ['distThenWatch'], function () {
+  gulp.run('serve:dist');
+});

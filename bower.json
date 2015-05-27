@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.4",
-    "requirejs": "~2.1.17"
+    "requirejs": "~2.1.17",
+    "edisonjs": "~2.0.0"
   }
 }
