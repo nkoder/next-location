@@ -20,3 +20,5 @@ From the directory of the project:
 4. `npm install` to install Node dependencies
 
 5. `bower install` to install Bower dependencies
+
+6. `gulp` to prepare project in `dist` folder and run server with it under [http://localhost:8000/index.html]()
