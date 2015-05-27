@@ -4,5 +4,8 @@
   "devDependencies": {
     "bower": "^1.4.1",
     "gulp": "^3.8.11"
+  },
+  "scripts": {
+    "server": "./node_modules/http-server/bin/http-server"
   }
 }
