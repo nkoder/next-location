@@ -3,7 +3,8 @@
   "private": true,
   "devDependencies": {
     "bower": "^1.4.1",
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-webserver": "^0.9.1"
   },
   "scripts": {
     "server": "./node_modules/http-server/bin/http-server"
