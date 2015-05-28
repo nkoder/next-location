@@ -43,14 +43,14 @@
                 <template repeat="{{page, i in pages}}">
                     <paper-item hash="{{page.hash}}" noink>
                         <core-icon icon="label{{route != page.hash ? '-outline' : ''}}"></core-icon>
-                        <a href="#{{page.hash}}">{{page.name}}</a>
+                        <a href="#{{page.hash}}">{{page.location.name}}</a>
                     </paper-item>
                 </template>
             </core-menu>
         </nav>
 
         <core-toolbar tool flex>
-            <div flex>{{selectedPage.page.name}}</div>
+            <div flex>{{selectedPage.page.location.name}}</div>
             <core-icon-button icon="refresh"></core-icon-button>
             <core-icon-button icon="add"></core-icon-button>
         </core-toolbar>
@@ -61,7 +61,8 @@
                                  on-tap="{{cyclePages}}">
                 <template repeat="{{page, i in pages}}">
                     <section hash="{{page.hash}}" layout vertical center-center>
-                        <div>{{page.name}}</div>
+                        <div>{{page.location.name}}</div>
+                        <div>{{page.location.wgs84Coordinate}}</div>
                         <div>
                             <paper-button raised fill on-tap="{{page.nextHash}}">
                                 Kolejna zagadka!

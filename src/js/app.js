@@ -6,27 +6,45 @@
   var template = document.querySelector('#t');
 
   template.pages = [{
-    name: 'Willa Grabkowo',
+    location: {
+      name: 'Willa Grabkowo',
+      wgs84Coordinate: 'N 52° 12\' 05.328\" E 20° 51\' 53.388\"'
+    },
     hash: 'grabki',
     nextHash: 'hala'
   }, {
-    name: 'Laser Tag',
+    location: {
+      name: 'Laser Tag',
+      wgs84Coordinate: '???'
+    },
     hash: 'hala',
     nextHash: 'klatka'
   }, {
-    name: 'Captivity',
+    location: {
+      name: 'Captivity',
+      wgs84Coordinate: '???'
+    },
     hash: 'klatka',
     nextHash: 'brzozy'
   }, {
-    name: 'Brzozowski Family Palace',
+    location: {
+      name: 'Brzozowski Family Palace',
+      wgs84Coordinate: 'N 52° 13.931 E 021° 01.023'
+    },
     hash: 'brzozy',
     nextHash: 'komunizm'
   }, {
-    name: 'Memoriał Wolnego Słowa',
+    location: {
+      name: 'Memoriał Wolnego Słowa',
+      wgs84Coordinate: 'N 52° 13.840 E 021° 01.235'
+    },
     hash: 'komunizm',
     nextHash: 'chaos'
   }, {
-    name: 'Zamieszanie',
+    location: {
+      name: 'Zamieszanie',
+      wgs84Coordinate: '???'
+    },
     hash: 'chaos'
   }
   ];
