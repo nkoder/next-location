@@ -6,6 +6,8 @@
   var template = document.querySelector('#t');
 
   template.pages = [{
+    hash: 'grabki',
+    nextHash: 'hala',
     location: {
       name: 'Willa Grabkowo',
       wgs84Coordinate: 'N52°12\'05.328" E20°51\'53.388"',
@@ -14,9 +16,13 @@
         longitude: '20.86483'
       }
     },
-    hash: 'grabki',
-    nextHash: 'hala'
+    task: {
+      question: 'Ile rombów jest widocznych na furtce?',
+      correctAnswers: ['dwa', '2']
+    }
   }, {
+    hash: 'hala',
+    nextHash: 'klatka',
     location: {
       name: 'Laser Tag',
       wgs84Coordinate: 'N52°12\'19" E20°52\'26"',
@@ -25,9 +31,13 @@
         longitude: '20.873889'
       }
     },
-    hash: 'hala',
-    nextHash: 'klatka'
+    task: {
+      question: '???',
+      correctAnswers: ['???', '??']
+    }
   }, {
+    hash: 'klatka',
+    nextHash: 'brzozy',
     location: {
       name: 'Captivity',
       wgs84Coordinate: 'N52°13\'52"N 21°00\'49"E',
@@ -36,9 +46,13 @@
         longitude: '21.013611'
       }
     },
-    hash: 'klatka',
-    nextHash: 'brzozy'
+    task: {
+      question: '???',
+      correctAnswers: ['???', '??']
+    }
   }, {
+    hash: 'brzozy',
+    nextHash: 'komunizm',
     location: {
       name: 'Brzozowski Family Palace',
       wgs84Coordinate: 'N52°13\'55.9" E21°01\'01.4"',
@@ -47,9 +61,13 @@
         longitude: '21.017056'
       }
     },
-    hash: 'brzozy',
-    nextHash: 'komunizm'
+    task: {
+      question: '???',
+      correctAnswers: ['???', '??']
+    }
   }, {
+    hash: 'komunizm',
+    nextHash: 'chaos',
     location: {
       name: 'Memoriał Wolnego Słowa',
       wgs84Coordinate: 'N52°13\'50.4" E21°01\'14.1"',
@@ -58,9 +76,12 @@
         longitude: '21.020583'
       }
     },
-    hash: 'komunizm',
-    nextHash: 'chaos'
+    task: {
+      question: '???',
+      correctAnswers: ['???', '??']
+    }
   }, {
+    hash: 'chaos',
     location: {
       name: 'Zamieszanie',
       wgs84Coordinate: 'N52°13\'53.4" E21°01\'19.2"',
@@ -69,7 +90,10 @@
         longitude: '21.0220'
       }
     },
-    hash: 'chaos'
+    task: {
+      question: '???',
+      correctAnswers: ['???', '??']
+    }
   }
   ];
   template.addEventListener('template-bound', function (e) {
