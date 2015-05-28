@@ -1,16 +1,34 @@
 (function () {
   "use strict";
 
-  var DEFAULT_ROUTE = 'one';
+  var DEFAULT_ROUTE = 'grabki';
 
   var template = document.querySelector('#t');
 
-  template.pages = [
-    {name: 'Single', hash: 'one'},
-    {name: 'page', hash: 'two'},
-    {name: 'app', hash: 'three'},
-    {name: 'using', hash: 'four'},
-    {name: 'Polymer', hash: 'five'}
+  template.pages = [{
+    name: 'Willa Grabkowo',
+    hash: 'grabki',
+    nextHash: 'hala'
+  }, {
+    name: 'Laser Tag',
+    hash: 'hala',
+    nextHash: 'klatka'
+  }, {
+    name: 'Captivity',
+    hash: 'klatka',
+    nextHash: 'brzozy'
+  }, {
+    name: 'Brzozowski Family Palace',
+    hash: 'brzozy',
+    nextHash: 'komunizm'
+  }, {
+    name: 'Memoriał Wolnego Słowa',
+    hash: 'komunizm',
+    nextHash: 'chaos'
+  }, {
+    name: 'Zamieszanie',
+    hash: 'chaos'
+  }
   ];
   template.addEventListener('template-bound', function (e) {
     var keys = document.querySelector('#keys');
