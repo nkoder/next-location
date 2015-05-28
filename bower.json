@@ -4,6 +4,10 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "requirejs": "~2.1.17",
-    "edisonjs": "~2.0.0"
+    "polymer": "Polymer/polymer#~0.5",
+    "core-elements": "Polymer/core-elements#~0.5",
+    "paper-item": "Polymer/paper-item#~0.5",
+    "font-roboto": "Polymer/font-roboto#~0.5",
+    "flatiron-director": "Polymer/flatiron-director#~0.5"
   }
 }
