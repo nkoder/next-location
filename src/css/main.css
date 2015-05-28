@@ -46,3 +46,8 @@ core-menu > paper-item.core-selected {
     height: 100%;
   }
 }
+
+google-map {
+  height: 300px;
+  width: 600px;
+}

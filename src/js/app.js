@@ -8,42 +8,66 @@
   template.pages = [{
     location: {
       name: 'Willa Grabkowo',
-      wgs84Coordinate: 'N 52° 12\' 05.328\" E 20° 51\' 53.388\"'
+      wgs84Coordinate: 'N52°12\'05.328" E20°51\'53.388"',
+      googleMapsCoordinate: {
+        latitude: '52.20148',
+        longitude: '20.86483'
+      }
     },
     hash: 'grabki',
     nextHash: 'hala'
   }, {
     location: {
       name: 'Laser Tag',
-      wgs84Coordinate: '???'
+      wgs84Coordinate: 'N52°12\'19" E20°52\'26"',
+      googleMapsCoordinate: {
+        latitude: '52.205278',
+        longitude: '20.873889'
+      }
     },
     hash: 'hala',
     nextHash: 'klatka'
   }, {
     location: {
       name: 'Captivity',
-      wgs84Coordinate: '???'
+      wgs84Coordinate: 'N52°13\'52"N 21°00\'49"E',
+      googleMapsCoordinate: {
+        latitude: '52.231111',
+        longitude: '21.013611'
+      }
     },
     hash: 'klatka',
     nextHash: 'brzozy'
   }, {
     location: {
       name: 'Brzozowski Family Palace',
-      wgs84Coordinate: 'N 52° 13.931 E 021° 01.023'
+      wgs84Coordinate: 'N52°13\'55.9" E21°01\'01.4"',
+      googleMapsCoordinate: {
+        latitude: '52.232194',
+        longitude: '21.017056'
+      }
     },
     hash: 'brzozy',
     nextHash: 'komunizm'
   }, {
     location: {
       name: 'Memoriał Wolnego Słowa',
-      wgs84Coordinate: 'N 52° 13.840 E 021° 01.235'
+      wgs84Coordinate: 'N52°13\'50.4" E21°01\'14.1"',
+      googleMapsCoordinate: {
+        latitude: '52.230667',
+        longitude: '21.020583'
+      }
     },
     hash: 'komunizm',
     nextHash: 'chaos'
   }, {
     location: {
       name: 'Zamieszanie',
-      wgs84Coordinate: '???'
+      wgs84Coordinate: 'N52°13\'53.4" E21°01\'19.2"',
+      googleMapsCoordinate: {
+        latitude: '52.2315',
+        longitude: '21.0220'
+      }
     },
     hash: 'chaos'
   }

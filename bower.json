@@ -9,6 +9,7 @@
     "paper-item": "Polymer/paper-item#~0.5",
     "font-roboto": "Polymer/font-roboto#~0.5",
     "flatiron-director": "Polymer/flatiron-director#~0.5",
-    "paper-button": "Polymer/paper-button#~0.5"
+    "paper-button": "Polymer/paper-button#~0.5",
+    "google-map": "GoogleWebComponents/google-map#~0.4"
   }
 }

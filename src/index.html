@@ -18,6 +18,7 @@
     <link rel="import" href="bower_components/font-roboto/roboto.html">
     <link rel="import" href="bower_components/core-a11y-keys/core-a11y-keys.html">
     <link rel="import" href="bower_components/core-ajax/core-ajax.html">
+    <link rel="import" href="bower_components/google-map/google-map.html"/>
     <link rel="stylesheet" href="css/main.css" shim-shadowdom>
 </head>
 <body unresolved fullbleed>
@@ -67,6 +68,13 @@
                             <paper-button raised fill on-tap="{{page.nextHash}}">
                                 Kolejna zagadka!
                             </paper-button>
+                        </div>
+                        <div>
+                            <google-map fitToMarkers zoom="16">
+                                <google-map-marker latitude="{{page.location.googleMapsCoordinate.latitude}}"
+                                                   longitude="{{page.location.googleMapsCoordinate.longitude}}"
+                                                   draggable="false"></google-map-marker>
+                            </google-map>
                         </div>
                     </section>
                 </template>
