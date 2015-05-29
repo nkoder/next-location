@@ -27,10 +27,9 @@ From the directory of the project:
 
 From the directory of the project:
 
-1. `git fetch` (to fetch `gh-pages` branch) 
+1. `gulp deploy:gh-pages`
+     
+2. Last command ends with strange error. A workaround is to force push.
 
-2. `git checkout gh-pages` (to set tracking of `gh-pages` branch to `origin/gh-pages`)
-
-3. `git checkout master` (to go back to `master` branch after initial setup)
-
-3. `gulp deploy:gh-pages`
+        cd .publish
+        git push --force origin gh-pages
