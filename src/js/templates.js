@@ -1,12 +1,12 @@
 define(function () {
 
-  function loadTemplate(templatePath) {
+  function loadTemplate(templatePath, data) {
 
     function loadTemplateIntoContainer(callback, injectIntoContainer) {
       var deferredTemplateLoad = $.Deferred();
       $.get('templates/' + templatePath)
         .done(function (template) {
-          var renderedTemplate = Mustache.render(template);
+          var renderedTemplate = Mustache.render(template, data);
           injectIntoContainer(renderedTemplate);
           deferredTemplateLoad.resolve();
         }).fail(function () {

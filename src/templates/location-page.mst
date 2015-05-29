@@ -7,13 +7,15 @@
 </div>
 <div class="row">
   <div class="col-xs-4">
-    <button id="go-back" class="btn btn-default">Poprzednia</button>
+    <a href="#!locations/grabki">
+      <button id="go-back" class="btn btn-default">Poprzednia</button>
+    </a>
   </div>
   <div class="col-xs-4">
-    Zagadka...
+    Zagadka... dla {{id}}
   </div>
   <div class="col-xs-4">
-    <a href="#!locations/two">
+    <a href="#!locations/hala">
       <button id="go-next" class="btn btn-default">Następna</button>
     </a>
   </div>

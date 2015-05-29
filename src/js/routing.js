@@ -1,40 +1,40 @@
-define(function (require) {
+define(['edison', 'location-page', 'locations', 'lodash'],
+  function (Edison, locationPage, locations, _) {
 
-  var Edison = require('edison');
-  var locationPage1 = require('location-page');
-  var locationPage2 = require('location-page-2');
+    function configure() {
 
-  var edison = new Edison({
-    'container': 'route-container'
+      var edison = new Edison({
+        'container': 'dummy-route-container'
+      });
+
+      var section = createSection('locations');
+      _.forEach(locations.all(), function (location) {
+        section.createRoute({
+          'name': location.id,
+          'callback': function () {
+            locationPage.loadInto('#page-content', location);
+          }
+        });
+      });
+
+      edison.initRoutes();
+
+      function createSection(sectionPath) {
+        return edison.createSection({
+          'name': sectionPath,
+          'callback': function () {
+          }
+        });
+      }
+
+    }
+
+    function loadDefaultPage() {
+      window.location.href = '#!locations/' + locations.defaultLocation().id
+    }
+
+    return {
+      configure: configure,
+      loadDefaultPage: loadDefaultPage
+    }
   });
-
-  var locationsSection = createSection('locations');
-  createRoute(locationsSection, 'one', locationPage1);
-  createRoute(locationsSection, 'two', locationPage2);
-
-  function createSection(sectionName) {
-    return edison.createSection({
-      'name': sectionName,
-      'callback': function () {
-      }
-    });
-  }
-
-  function createRoute(section, path, page) {
-    section.createRoute({
-      'name': path,
-      'callback': function (param) {
-        var routePath = "#!" + this.section.route.name + "/" + path;
-        page.loadInto('#page-content', '#page-header', param);
-      }
-    });
-  }
-
-  function init() {
-    edison.initRoutes();
-  }
-
-  return {
-    init: init
-  }
-});

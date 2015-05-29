@@ -1,9 +1,10 @@
-define(function () {
+define(['lodash'], function (_) {
 
-  function data() {
+  function all() {
     return [{
-      hash: 'grabki',
-      nextHash: 'hala',
+      isDefault: true,
+      id: 'grabki',
+      idOfNext: 'hala',
       location: {
         name: 'Willa Grabkowo',
         wgs84Coordinate: 'N52°12\'05.328" E20°51\'53.388"',
@@ -17,8 +18,8 @@ define(function () {
         correctAnswers: ['dwa', '2']
       }
     }, {
-      hash: 'hala',
-      nextHash: 'klatka',
+      id: 'hala',
+      idOfNext: 'klatka',
       location: {
         name: 'Laser Tag',
         wgs84Coordinate: 'N52°12\'19" E20°52\'26"',
@@ -32,8 +33,8 @@ define(function () {
         correctAnswers: ['???', '??']
       }
     }, {
-      hash: 'klatka',
-      nextHash: 'brzozy',
+      id: 'klatka',
+      idOfNext: 'brzozy',
       location: {
         name: 'Captivity',
         wgs84Coordinate: 'N52°13\'52"N 21°00\'49"E',
@@ -47,8 +48,8 @@ define(function () {
         correctAnswers: ['???', '??']
       }
     }, {
-      hash: 'brzozy',
-      nextHash: 'komunizm',
+      id: 'brzozy',
+      idOfNext: 'komunizm',
       location: {
         name: 'Brzozowski Family Palace',
         wgs84Coordinate: 'N52°13\'55.9" E21°01\'01.4"',
@@ -62,8 +63,8 @@ define(function () {
         correctAnswers: ['???', '??']
       }
     }, {
-      hash: 'komunizm',
-      nextHash: 'chaos',
+      id: 'komunizm',
+      idOfNext: 'chaos',
       location: {
         name: 'Memoriał Wolnego Słowa',
         wgs84Coordinate: 'N52°13\'50.4" E21°01\'14.1"',
@@ -77,7 +78,7 @@ define(function () {
         correctAnswers: ['???', '??']
       }
     }, {
-      hash: 'chaos',
+      id: 'chaos',
       location: {
         name: 'Zamieszanie',
         wgs84Coordinate: 'N52°13\'53.4" E21°01\'19.2"',
@@ -94,7 +95,14 @@ define(function () {
     ];
   }
 
+  function defaultLocation() {
+    return _.find(all(), function (location) {
+      return !!location.isDefault;
+    });
+  }
+
   return {
-    data: data
+    all: all,
+    defaultLocation: defaultLocation
   }
 });

@@ -15,26 +15,15 @@
 </head>
 <body>
 
-<div class="main-container">
-    <div class="container">
-        <div class="row" id="page-content"></div>
-    </div>
-</div>
+<div class="container" id="page-content"></div>
 
-<div id="route-container"></div>
+<div id="dummy-route-container"></div>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/mustache/mustache.js"></script>
 <script src="bower_components/requirejs/require.js"></script>
-<script src="js/require-config.js"></script>
-<script>
-    jQuery(document).ready(function () {
-        require(['routing', 'location-page'], function (routing, locationPage) {
-            routing.init();
-            window.location.href = "#!locations/one"
-        });
-    });
-</script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
