@@ -6,6 +6,16 @@ define(['templates', 'lodash', 'sanitize'],
         .load('location-page.mst', location)
         .andInsertInto($(contentElementId))
         .then(function () {
+          return templates
+            .load('task-form.mst', location)
+            .andInsertInto($('#task-tab'));
+        })
+        .then(function () {
+          return templates
+            .load('map.mst')
+            .andInsertInto($('#map-tab'));
+        })
+        .then(function () {
           if (!!location.geocacheContentFile) {
             templates
               .load(location.geocacheContentFile)

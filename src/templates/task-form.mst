@@ -1,0 +1,26 @@
+<form>
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6">
+            <div class="form-group">
+                <label for="user-answer" class="control-label">
+                    Pytanie
+                </label>
+
+                <p class="form-control-static">
+                    {{task.question}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6">
+            <div class="form-group">
+                <label for="user-answer" class="control-label">
+                    Odpowiedź
+                </label>
+                <input type="text" class="form-control" id="user-answer"
+                       placeholder="no dajesz&hellip;"/>
+            </div>
+        </div>
+    </div>
+</form>
