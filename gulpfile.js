@@ -115,7 +115,11 @@ gulp.task('serve:dist', function () {
 
 gulp.task('deploy:gh-pages', ['dist'], function () {
   return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({
+      remoteUrl: 'git@github.com:nkoder/next-location.git',
+      branch: 'gh-pages',
+      cacheDir: '.publish'
+    }));
 });
 
 gulp.task('default', ['distThenWatch'], function () {
