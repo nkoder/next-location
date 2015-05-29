@@ -17,8 +17,8 @@ define(['lodash'], function (_) {
 
         },
         task: {
-          question: 'Jakie dwie fajne figury znajdują się na furtce',
-          correctAnswers: ['romby', 'rąby', 'rołby', 'dwa romby', '2 romby']
+          question: 'Jak nazywa się fajna figura, która dwa razy pojawia się na ciekawej metalowej furtce?',
+          correctAnswers: ['romb', 'rąb', 'rołb']
         },
         geocacheContentFile: 'geocache-grabki-content.mst'
       },
