@@ -2,36 +2,11 @@
   "name": "next-location",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
     "requirejs": "~2.1.17",
-    "bootstrap": "3.2.0",
-    "fullcalendar": "1.6.4",
-    "jquery-1.10.2": "http://code.jquery.com/jquery-1.10.2.js",
-    "jquery-ui": "1.10.2",
-    "jqueryui-touch-punch": "*",
-    "perfect-scrollbar": "https://github.com/noraesae/perfect-scrollbar.git#0.4.11",
-    "less": "1.5.0",
-    "bootstrap-hover-dropdown": "2.0.1",
-    "blockUI": "2.65",
-    "jquery-cookie": "1.4.0",
-    "flot": "https://github.com/flot/flot.git#0.8.1",
-    "iCheck": "1.0.1",
-    "font-awesome": "4.1.0",
-    "font-awesome-3.2.1": "https://github.com/FortAwesome/Font-Awesome.git#3.2.1",
-    "datatables": "1.9.4",
-    "select2": "3.4.3",
-    "jquery-mockjax": "1.5.2",
-    "bootbox": "4.2.0",
-    "edisonjs": "~2.0.0",
-    "mustache.js": "~2.0.0",
-    "spin.js": "~2.1.0",
-    "moment": "~2.10.3",
     "lodash": "~3.9.3",
-    "bootstrap-datepicker": "~1.4.0",
-    "underscore.string": "~3.0.3"
-  },
-  "resolutions": {
-    "bootstrap": "3.2.0",
-    "jquery": "~2.1.4"
+    "mustache": "~2.0.0",
+    "font-awesome": "~4.3.0",
+    "edisonjs": "~2.0.0"
   }
 }
