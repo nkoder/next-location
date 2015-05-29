@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 var del = require('del');
+var ghPages = require('gulp-gh-pages');
 var liveServer = require("live-server");
 
 var paths = {
@@ -75,6 +76,9 @@ gulp.task('dist:bower', ['clean:bower'], function () {
     .pipe(gulp.dest('dist/bower_components/'));
 });
 
+gulp.task('dist', ['dist:index', 'dist:robots', 'dist:js', 'dist:css', 'dist:templates', 'dist:bower']);
+
+
 gulp.task('watch', function () {
   gulp.watch(paths.index, ['dist:index']);
   gulp.watch(paths.robots, ['dist:robots']);
@@ -82,6 +86,10 @@ gulp.task('watch', function () {
   gulp.watch(paths.css, ['dist:css']);
   gulp.watch(paths.templates, ['dist:templates']);
   gulp.watch(paths.bower, ['dist:bower']);
+});
+
+gulp.task('distThenWatch', ['dist'], function () {
+  gulp.run('watch');
 });
 
 gulp.task('serve', function () {
@@ -102,10 +110,9 @@ gulp.task('serve:dist', function () {
   });
 });
 
-gulp.task('dist', ['dist:index', 'dist:robots', 'dist:js', 'dist:css', 'dist:templates', 'dist:bower']);
-
-gulp.task('distThenWatch', ['dist'], function () {
-  gulp.run('watch');
+gulp.task('deploy:gh-pages', ['dist'], function () {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['distThenWatch'], function () {
