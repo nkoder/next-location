@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" class="no-js">
+<html lang="pl">
 <head>
     <title>30 maja</title>
     <meta charset="utf-8"/>
@@ -31,12 +31,8 @@
 <script>
     jQuery(document).ready(function () {
         require(['routing', 'location-page'], function (routing, locationPage) {
-            locationPage.loadInto('#page-content', '#page-header');
             routing.init();
-            $('#the-tabs a').click(function (event) {
-//                event.preventDefault();
-                $(this).tab('show');
-            })
+            window.location.href = "#!locations/one"
         });
     });
 </script>
