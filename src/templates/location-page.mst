@@ -22,7 +22,7 @@
     </div>
     <div class="col-xs-4">
         <a href="#!locations/{{idOfNextLocation}}">
-            <button id="go-next" class="btn btn-default">Następne miejsce</button>
+            <button id="go-next" class="btn btn-default" disabled="disabled">Następne miejsce</button>
         </a>
     </div>
 </div>
@@ -54,7 +54,7 @@
                     <div>
                         <label>
                             Odpowiedź:
-                            <input type="text"/>
+                            <input type="text" id="user-answer"/>
                         </label>
                     </div>
                 </div>
