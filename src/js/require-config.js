@@ -7,7 +7,7 @@ require.config({
   'packages': [
     {
       'name': 'edison',
-      'location': '../bower_components/edisonjs/dist/',
+      'location': '../bower_components/edisonjs/dist',
       'main': 'edison'
     }
   ]
