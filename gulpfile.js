@@ -5,6 +5,7 @@ var ghPages = require('gulp-gh-pages');
 var liveServer = require("live-server");
 
 var paths = {
+  cname: 'src/CNAME',
   index: 'src/index.html',
   robots: 'src/robots.txt',
   js: 'src/js/*.js',
@@ -25,6 +26,10 @@ var paths = {
     'src/bower_components/edisonjs/dist/edison.js'
   ]
 };
+
+gulp.task('clean:cname', function (cb) {
+  del('dist/CNAME', cb);
+});
 
 gulp.task('clean:index', function (cb) {
   del('dist/index.html', cb);
@@ -48,6 +53,11 @@ gulp.task('clean:templates', function (cb) {
 
 gulp.task('clean:bower', function (cb) {
   del('dist/bower_components/', cb);
+});
+
+gulp.task('dist:cname', ['clean:cname'], function () {
+  return gulp.src(paths.cname)
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('dist:index', ['clean:index'], function () {
@@ -80,10 +90,11 @@ gulp.task('dist:bower', ['clean:bower'], function () {
     .pipe(gulp.dest('dist/bower_components/'));
 });
 
-gulp.task('dist', ['dist:index', 'dist:robots', 'dist:js', 'dist:css', 'dist:templates', 'dist:bower']);
+gulp.task('dist', ['dist:cname', 'dist:index', 'dist:robots', 'dist:js', 'dist:css', 'dist:templates', 'dist:bower']);
 
 
 gulp.task('watch', function () {
+  gulp.watch(paths.cname, ['dist:cname']);
   gulp.watch(paths.index, ['dist:index']);
   gulp.watch(paths.robots, ['dist:robots']);
   gulp.watch(paths.js, ['dist:js']);

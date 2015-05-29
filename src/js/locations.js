@@ -6,7 +6,7 @@ define(['lodash'], function (_) {
         isDefault: true,
         id: 'grabki',
         idOfNextLocation: 'hala',
-        name: 'Grabki',
+        title: 'Grabki',
         wgs84Coordinate: {
           latitude: 'N52°12\'05.328"',
           longitude: 'E20°51\'53.388"'
@@ -26,7 +26,7 @@ define(['lodash'], function (_) {
         idOfPreviousLocation: 'grabki',
         id: 'hala',
         idOfNextLocation: 'klatka',
-        name: 'Hala',
+        title: 'Hala',
         wgs84Coordinate: {
           latitude: 'N52°12\'19"',
           longitude: 'E20°52\'26"'
@@ -45,7 +45,7 @@ define(['lodash'], function (_) {
         idOfPreviousLocation: 'hala',
         id: 'klatka',
         idOfNextLocation: 'brzozy',
-        name: 'Klatka',
+        title: 'Klatka',
         wgs84Coordinate: {
           latitude: 'N52°13\'52"',
           longitude: 'E21°00\'49"'
@@ -64,7 +64,7 @@ define(['lodash'], function (_) {
         idOfPreviousLocation: 'klatka',
         id: 'brzozy',
         idOfNextLocation: 'komunizm',
-        name: 'Brzozy',
+        title: 'Brzozy',
         wgs84Coordinate: {
           latitude: 'N52°13\'55.9"',
           longitude: 'E21°01\'01.4"'
@@ -83,7 +83,7 @@ define(['lodash'], function (_) {
         idOfPreviousLocation: 'brzozy',
         id: 'komunizm',
         idOfNextLocation: 'chaos',
-        name: 'Komunizm',
+        title: 'Komunizm',
         wgs84Coordinate: {
           latitude: 'N52°13\'50.4"',
           longitude: 'E21°01\'14.1"'
@@ -101,7 +101,7 @@ define(['lodash'], function (_) {
       {
         idOfPreviousLocation: 'komunizm',
         id: 'chaos',
-        name: 'Chaos',
+        title: 'Chaos',
         wgs84Coordinate: {
           latitude: 'N52°13\'53.4"',
           longitude: 'E21°01\'19.2"'

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <h1 class="text-uppercase">{{name}}</h1>
+        <h1 class="text-uppercase">{{title}}</h1>
 
         <h3>
             <small>{{wgs84Coordinate.latitude}}
