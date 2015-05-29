@@ -22,3 +22,15 @@ From the directory of the project:
 5. `bower install` to install Bower dependencies
 
 6. `gulp` to prepare project in `dist` folder and run server with it under [http://localhost:8000/index.html]()
+
+## Deploy to Github Pages
+
+From the directory of the project:
+
+1. `git fetch` (to fetch `gh-pages` branch) 
+
+2. `git checkout gh-pages` (to set tracking of `gh-pages` branch to `origin/gh-pages`)
+
+3. `git checkout master` (to go back to `master` branch after initial setup)
+
+3. `gulp deploy:gh-pages`
