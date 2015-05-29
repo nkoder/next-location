@@ -1,28 +1,29 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="page-header">
-            <h1>{{name}}</h1>
-        </div>
+        <h1 class="text-uppercase">{{name}}</h1>
+
+        <h3>
+            <small>{{wgs84Coordinate.latitude}}
+                <span class="fa fa-compass"/>
+                {{wgs84Coordinate.longitude}}
+            </small>
+        </h3>
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-        {{wgs84Coordinate.latitude}}
-        <span class="fa fa-compass"/>
-        {{wgs84Coordinate.longitude}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-4">
-        <a href="#!locations/{{idOfPreviousLocation}}">
-            <button id="go-back" class="btn btn-default">Poprzednie miejsce</button>
+    <!--<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>-->
+    <div class="col-xs-6">
+        <a id="go-back" class="btn btn-primary" role="button"
+           href="#!locations/{{idOfPreviousLocation}}">
+            <span class="glyphicon glyphicon-chevron-left"/>
+            Poprzednie miejsce
         </a>
     </div>
-    <div class="col-xs-4">
-    </div>
-    <div class="col-xs-4">
-        <a href="#!locations/{{idOfNextLocation}}">
-            <button id="go-next" class="btn btn-default" disabled="disabled">Następne miejsce</button>
+    <div class="col-xs-6">
+        <a id="go-next" class="btn btn-primary" role="button"
+           href="#!locations/{{idOfNextLocation}}" disabled="disabled">
+            Następne miejsce
+            <span class="glyphicon glyphicon-chevron-right"/>
         </a>
     </div>
 </div>
@@ -32,31 +33,51 @@
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
                     <a href="#task-tab" aria-controls="task" role="tab" data-toggle="tab">
+                        <span class="fa fa-question"/>
                         Zagadka
                     </a>
                 </li>
                 <li role="presentation">
                     <a href="#map-tab" aria-controls="map" role="tab" data-toggle="tab">
+                        <span class="fa fa-map-marker"/>
                         Mapa
                     </a>
                 </li>
                 <li role="presentation">
                     <a href="#geocache-tab" aria-controls="geocache" role="tab" data-toggle="tab">
+                        <span class="fa fa-archive"/>
                         Skrytka
                     </a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="task-tab">
-                    <div class="row">
-                        {{task.question}}
-                    </div>
-                    <div>
-                        <label>
-                            Odpowiedź:
-                            <input type="text" id="user-answer"/>
-                        </label>
-                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <div class="form-group">
+                                    <label for="user-answer" class="control-label">
+                                        Pytanie
+                                    </label>
+
+                                    <p class="form-control-static">
+                                        {{task.question}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <div class="form-group">
+                                    <label for="user-answer" class="control-label">
+                                        Odpowiedź
+                                    </label>
+                                    <input type="text" class="form-control" id="user-answer"
+                                           placeholder="no dajesz&hellip;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="map-tab">
                     <iframe

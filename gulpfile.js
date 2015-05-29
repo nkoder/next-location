@@ -14,6 +14,7 @@ var paths = {
     'src/bower_components/bootstrap/dist/css/bootstrap.css',
     'src/bower_components/bootstrap/dist/css/bootstrap.css.map',
     'src/bower_components/bootstrap/dist/js/bootstrap.js',
+    'src/bower_components/bootstrap/dist/fonts/*',
     'src/bower_components/requirejs/require.js',
     'src/bower_components/lodash/lodash.js',
     'src/bower_components/font-awesome/css/font-awesome.css',

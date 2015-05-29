@@ -16,7 +16,10 @@ define(['templates', 'lodash', 'sanitize'],
           var userAnswerElement = $('#user-answer');
           userAnswerElement.bind('input', onUserAnswerTry(userAnswerElement,
             function (hasUserFoundTheAnswer) {
-              $('#go-next').prop('disabled', !hasUserFoundTheAnswer)
+              $('#go-next').attr('disabled', !hasUserFoundTheAnswer)
+              userAnswerElement
+                .closest('.form-group')
+                .toggleClass('has-success', hasUserFoundTheAnswer);
             }));
         });
 
