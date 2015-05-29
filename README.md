@@ -33,3 +33,5 @@ From the directory of the project:
 
         cd .publish
         git push --force origin gh-pages
+        cd ..
+        rm -rf .publish
