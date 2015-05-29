@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="page-header">
+      <h1>Coś tutaj </h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <button id="go-back" class="btn btn-default">Poprzednia</button>
+  </div>
+  <div class="col-xs-4">
+    Zagadka...
+  </div>
+  <div class="col-xs-4">
+    <a href="#!locations/two">
+      <button id="go-next" class="btn btn-default">Następna</button>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div role="tabpanel" id="super-tabs">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                  data-toggle="tab">Mapa</a>
+        </li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Opis</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Pytanie</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.6355975708834!2d21.005995000000002!3d52.231837999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sPa%C5%82ac+Kultury+i+Nauki!5e0!3m2!1spl!2spl!4v1432857644993"
+            width="800" height="600" frameborder="0" style="border:0"></iframe>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="profile">aaaaaaaaaaaaaaaaaaaa</div>
+        <div role="tabpanel" class="tab-pane fade" id="messages">sdsdsdsd</div>
+        <div role="tabpanel" class="tab-pane fade" id="settings">ssssssssss</div>
+      </div>
+    </div>
+  </div>
+</div>

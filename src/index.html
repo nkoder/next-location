@@ -1,88 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl" class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>30 maja</title>
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-    <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
-    <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
-    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-    <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
-    <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
-    <link rel="import" href="bower_components/core-icon/core-icon.html">
-    <link rel="import" href="bower_components/core-menu/core-menu.html">
-    <link rel="import" href="bower_components/paper-item/paper-item.html">
-    <link rel="import" href="bower_components/paper-input/paper-input.html">
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/flatiron-director/flatiron-director.html">
-    <link rel="import" href="bower_components/font-roboto/roboto.html">
-    <link rel="import" href="bower_components/core-a11y-keys/core-a11y-keys.html">
-    <link rel="import" href="bower_components/core-ajax/core-ajax.html">
-    <link rel="import" href="bower_components/google-map/google-map.html"/>
-    <link rel="stylesheet" href="css/main.css" shim-shadowdom>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/perfect-scrollbar/src/perfect-scrollbar.css">
+    <link rel="stylesheet" href="bower_components/select2/select2.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/main.css"/>
 </head>
-<body unresolved fullbleed>
+<body>
 
-<template is="auto-binding" id="t">
+<div class="main-container">
+    <div class="container">
+        <div class="row" id="page-content"></div>
+    </div>
+</div>
 
-    <!-- Route controller. -->
-    <flatiron-director route="{{route}}" autoHash></flatiron-director>
+<div id="route-container"></div>
 
-    <!-- Keyboard nav controller. -->
-    <core-a11y-keys id="keys" target="{{parentElement}}"
-                    keys="up down left right space space+shift"
-                    on-keys-pressed="{{keyHandler}}"></core-a11y-keys>
-
-    <core-scaffold id="scaffold">
-
-        <nav>
-            <core-toolbar>
-                <span>30 maja</span>
-            </core-toolbar>
-            <core-menu valueattr="hash" selected="{{route}}" selectedModel="{{selectedPage}}"
-                       on-core-select="{{menuItemSelected}}">
-                <template repeat="{{page, i in pages}}">
-                    <paper-item hash="{{page.hash}}" noink>
-                        <core-icon icon="label{{route != page.hash ? '-outline' : ''}}"></core-icon>
-                        <a href="#{{page.hash}}">{{page.location.name}}</a>
-                    </paper-item>
-                </template>
-            </core-menu>
-        </nav>
-
-        <core-toolbar tool flex>
-            <div flex>{{selectedPage.page.location.name}}</div>
-        </core-toolbar>
-
-        <div layout horizontal center-center fit>
-            <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
-                                 transitions="slide-from-right">
-                <template repeat="{{page, i in pages}}">
-                    <section hash="{{page.hash}}" layout vertical center-center>
-                        <p>{{page.location.wgs84Coordinate}}</p>
-
-                        <p>{{page.task.question}}</p>
-                        <paper-input label="Odpowiedź" floatingLabel>sdsds</paper-input>
-                        <paper-button raised fill on-tap="#{{page.nextHash}}">
-                            Kolejna zagadka!
-                        </paper-button>
-                        <div>
-                            <google-map fitToMarkers zoom="16">
-                                <google-map-marker latitude="{{page.location.googleMapsCoordinate.latitude}}"
-                                                   longitude="{{page.location.googleMapsCoordinate.longitude}}"
-                                                   draggable="false"></google-map-marker>
-                            </google-map>
-                        </div>
-                    </section>
-                </template>
-            </core-animated-pages>
-        </div>
-
-    </core-scaffold>
-
-</template>
-
-<script src="js/app.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/jquery-ui/ui/jquery-ui.custom.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+<script src="bower_components/blockUI/jquery.blockUI.js"></script>
+<script src="bower_components/iCheck/icheck.js"></script>
+<script src="bower_components/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+<script src="bower_components/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+<script src="bower_components/less/dist/less-1.5.0.js"></script>
+<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
+<script src="bower_components/flot/jquery.flot.js"></script>
+<script src="bower_components/flot/jquery.flot.pie.js"></script>
+<script src="bower_components/flot/jquery.flot.resize.js"></script>
+<script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="bower_components/fullcalendar/fullcalendar.js"></script>
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+<script src="bower_components/mustache.js/mustache.js"></script>
+<script src="bower_components/spin.js/spin.js"></script>
+<script src="bower_components/spin.js/jquery.spin.js"></script>
+<script src="bower_components/requirejs/require.js"></script>
+<script src="js/require-config.js"></script>
+<script>
+    jQuery(document).ready(function () {
+        require(['routing', 'location-page'], function (routing, locationPage) {
+            locationPage.loadInto('#page-content', '#page-header');
+            routing.init();
+            $('#the-tabs a').click(function (event) {
+//                event.preventDefault();
+                $(this).tab('show');
+            })
+        });
+    });
+</script>
 </body>
 </html>
