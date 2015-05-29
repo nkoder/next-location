@@ -2,7 +2,7 @@ define(function () {
 
   function loadTemplate(templatePath, data) {
 
-    function loadTemplateIntoContainer(callback, injectIntoContainer) {
+    function loadTemplateIntoContainer(injectIntoContainer) {
       var deferredTemplateLoad = $.Deferred();
       $.get('templates/' + templatePath)
         .done(function (template) {
@@ -16,13 +16,13 @@ define(function () {
     }
 
     return {
-      andInsertInto: function (container, callback) {
-        return loadTemplateIntoContainer(callback, function (renderedTemplate) {
+      andInsertInto: function (container) {
+        return loadTemplateIntoContainer(function (renderedTemplate) {
           container.html(renderedTemplate)
         });
       },
-      andReplace: function (container, callback) {
-        return loadTemplateIntoContainer(callback, function (renderedTemplate) {
+      andReplace: function (container) {
+        return loadTemplateIntoContainer(function (renderedTemplate) {
           container.replaceWith(renderedTemplate)
         });
       }

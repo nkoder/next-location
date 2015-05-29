@@ -15,7 +15,8 @@ define(['lodash'], function (_) {
       task: {
         question: 'Ile rombów jest widocznych na furtce?',
         correctAnswers: ['dwa', '2']
-      }
+      },
+      geocacheContentFile: 'geocache-grabki-content.mst'
     }, {
       idOfPreviousLocation: 'grabki',
       id: 'hala',
