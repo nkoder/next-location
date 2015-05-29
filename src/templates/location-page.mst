@@ -7,7 +7,9 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        {{wgs84Coordinate}}
+        {{wgs84Coordinate.latitude}}
+        <span class="fa fa-compass"/>
+        {{wgs84Coordinate.longitude}}
     </div>
 </div>
 <div class="row">
