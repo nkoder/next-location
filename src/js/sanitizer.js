@@ -1,8 +1,10 @@
 define(['lodash'], function (_) {
 
-  function sanitize(text) {
+  function sanitizeText(text) {
     return _.deburr(_.escape(text)).toLowerCase();
   }
 
-  return sanitize;
+  return {
+    sanitizeText: sanitizeText
+  };
 });

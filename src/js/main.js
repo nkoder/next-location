@@ -3,8 +3,7 @@
   require.config({
     baseUrl: 'js/',
     paths: {
-      lodash: '../bower_components/lodash/lodash',
-      logger: 'console-logger'
+      lodash: '../bower_components/lodash/lodash'
     },
     'packages': [
       {

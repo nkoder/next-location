@@ -1,5 +1,5 @@
-define(['templates', 'lodash', 'sanitize', 'progress'],
-  function (templates, _, sanitize, progress) {
+define(['templates', 'lodash', 'sanitizer', 'storage'],
+  function (templates, _, sanitizer, storage) {
 
     function loadInto(contentElementId, location, actionOnLoaded) {
       templates
@@ -23,31 +23,32 @@ define(['templates', 'lodash', 'sanitize', 'progress'],
           }
         })
         .then(function () {
-          var userAnswerElement = $('#user-answer');
-          userAnswerElement.bind('input', onUserAnswerTry(userAnswerElement,
-            function (hasUserFoundTheAnswer) {
-              $('#go-next').attr('disabled', !hasUserFoundTheAnswer)
-              userAnswerElement
-                .closest('.form-group')
-                .toggleClass('has-success', hasUserFoundTheAnswer);
-            }));
+          userAnswerElement().bind('input', onUserAnswerChangedAction);
+          userAnswerElement().val(storage.readText(location.id));
+          onUserAnswerChangedAction();
           actionOnLoaded();
         });
 
-      function onUserAnswerTry(userAnswerElement, callback) {
-        return function () {
-          var userAnswer = sanitize(userAnswerElement.val());
-          var correctAnswers = _.map(location.task.correctAnswers, sanitize);
-          var hasUserFoundTheAnswer = _.reduce(correctAnswers, function (foundTheAnswer, correctAnswer) {
-            return foundTheAnswer || (correctAnswer === userAnswer);
-          }, false);
-          callback(hasUserFoundTheAnswer);
-        }
+      function onUserAnswerChangedAction() {
+        storage.writeText(location.id, userAnswerElement().val());
+        var userAnswer = sanitizer.sanitizeText(userAnswerElement().val());
+        var correctAnswers = _.map(location.task.correctAnswers, sanitizer.sanitizeText);
+        var hasUserFoundTheAnswer = _.reduce(correctAnswers, function (foundTheAnswer, correctAnswer) {
+          return foundTheAnswer || (correctAnswer === userAnswer);
+        }, false);
+        updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer);
       }
     }
 
-    function sanitized(text) {
-      return _.deburr(_.escape(text)).toLowerCase();
+    function updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer) {
+      $('#go-next').attr('disabled', !hasUserFoundTheAnswer);
+      $('#user-answer')
+        .closest('.form-group')
+        .toggleClass('has-success', hasUserFoundTheAnswer);
+    }
+
+    function userAnswerElement() {
+      return $('#user-answer');
     }
 
     return {
