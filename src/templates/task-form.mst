@@ -3,7 +3,7 @@
         <form>
             <div class="form-group">
                 <label for="user-answer" class="control-label">
-                    Pytanie
+                    <strong>Pytanie</strong>
                 </label>
 
                 <p class="form-control-static">
@@ -12,7 +12,7 @@
             </div>
             <div class="form-group">
                 <label for="user-answer" class="control-label">
-                    Odpowiedź
+                    <strong>Odpowiedź</strong>
                 </label>
                 <input type="text" class="form-control" id="user-answer"
                        placeholder="no dajesz&hellip;"/>

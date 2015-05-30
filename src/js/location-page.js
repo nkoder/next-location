@@ -1,7 +1,7 @@
-define(['templates', 'lodash', 'sanitizer', 'storage'],
-  function (templates, _, sanitizer, storage) {
+define(['templates', 'lodash', 'sanitizer', 'memory'],
+  function (templates, _, sanitizer, memory) {
 
-    function loadInto(contentElementId, location, actionOnLoaded) {
+    function loadInto(contentElementId, location, actionOnPageLoaded) {
       templates
         .load('location-page.mst', location)
         .andInsertInto($(contentElementId))
@@ -24,13 +24,13 @@ define(['templates', 'lodash', 'sanitizer', 'storage'],
         })
         .then(function () {
           userAnswerElement().bind('input', onUserAnswerChangedAction);
-          userAnswerElement().val(storage.readText(location.id));
+          userAnswerElement().val(memory.read(location.id));
           onUserAnswerChangedAction();
-          actionOnLoaded();
+          actionOnPageLoaded();
         });
 
       function onUserAnswerChangedAction() {
-        storage.writeText(location.id, userAnswerElement().val());
+        memory.write(location.id, userAnswerElement().val());
         var userAnswer = sanitizer.sanitizeText(userAnswerElement().val());
         var correctAnswers = _.map(location.task.correctAnswers, sanitizer.sanitizeText);
         var hasUserFoundTheAnswer = _.reduce(correctAnswers, function (foundTheAnswer, correctAnswer) {

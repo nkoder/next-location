@@ -3,7 +3,8 @@
   require.config({
     baseUrl: 'js/',
     paths: {
-      lodash: '../bower_components/lodash/lodash'
+      'lodash': '../bower_components/lodash/lodash',
+      'local-storage': '../bower_components/store.js/store'
     },
     'packages': [
       {
