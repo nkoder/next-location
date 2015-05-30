@@ -1,5 +1,5 @@
-define(['edison', 'location-page', 'locations', 'lodash'],
-  function (Edison, locationPage, locations, _) {
+define(['edison', 'location-page', 'locations', 'lodash', 'progress'],
+  function (Edison, locationPage, locations, _, progress) {
 
     function configure() {
 
@@ -12,7 +12,9 @@ define(['edison', 'location-page', 'locations', 'lodash'],
         section.createRoute({
           'name': location.id,
           'callback': function () {
-            locationPage.loadInto('#page-content', location);
+            locationPage.loadInto('#location-page', location, function () {
+              progress.updateTo(location.progress).outOf(locations.all().length);
+            });
           }
         });
       });

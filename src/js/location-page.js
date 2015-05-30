@@ -1,7 +1,7 @@
-define(['templates', 'lodash', 'sanitize'],
-  function (templates, _, sanitize) {
+define(['templates', 'lodash', 'sanitize', 'progress'],
+  function (templates, _, sanitize, progress) {
 
-    function loadInto(contentElementId, location) {
+    function loadInto(contentElementId, location, actionOnLoaded) {
       templates
         .load('location-page.mst', location)
         .andInsertInto($(contentElementId))
@@ -31,6 +31,7 @@ define(['templates', 'lodash', 'sanitize'],
                 .closest('.form-group')
                 .toggleClass('has-success', hasUserFoundTheAnswer);
             }));
+          actionOnLoaded();
         });
 
       function onUserAnswerTry(userAnswerElement, callback) {

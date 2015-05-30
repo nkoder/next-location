@@ -1,59 +1,70 @@
 <div class="row">
-    <div class="col-xs-12">
-        <h1 class="text-uppercase">{{title}}</h1>
+    <div class="col-md-12">
 
-        <h3>
+        <h2 class="text-uppercase">{{title}}</h2>
+
+        <h4>
             <small>{{wgs84Coordinate.latitude}}
-                <span class="fa fa-compass"/>
+                <span class="fa fa-compass"></span>
                 {{wgs84Coordinate.longitude}}
             </small>
-        </h3>
+        </h4>
+
     </div>
 </div>
-<div class="row">
-    <!--<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>-->
+<div class="row more-space-above">
+
     <div class="col-xs-6">
         <a id="go-back" class="btn btn-primary" role="button"
            href="#!locations/{{idOfPreviousLocation}}">
-            <span class="glyphicon glyphicon-chevron-left"/>
+            <span class="glyphicon glyphicon-chevron-left"></span>
             Poprzednie miejsce
         </a>
     </div>
+
     <div class="col-xs-6">
         <a id="go-next" class="btn btn-primary" role="button"
            href="#!locations/{{idOfNextLocation}}" disabled="disabled">
             Następne miejsce
-            <span class="glyphicon glyphicon-chevron-right"/>
+            <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
     </div>
+
 </div>
-<div class="row">
-    <div class="col-xs-12">
+<div class="row more-space-above">
+    <div class="col-md-12">
+
         <div role="tabpanel" id="super-tabs">
             <ul class="nav nav-tabs" role="tablist">
+
                 <li role="presentation" class="active">
                     <a href="#task-tab" aria-controls="task" role="tab" data-toggle="tab">
-                        <span class="fa fa-question"/>
+                        <span class="fa fa-question"></span>
                         Zagadka
                     </a>
                 </li>
+
                 <li role="presentation">
                     <a href="#map-tab" aria-controls="map" role="tab" data-toggle="tab">
-                        <span class="fa fa-map-marker"/>
+                        <span class="fa fa-map-marker"></span>
                         Mapa
                     </a>
                 </li>
+
                 <li role="presentation">
                     <a href="#geocache-tab" aria-controls="geocache" role="tab" data-toggle="tab">
-                        <span class="fa fa-archive"/>
+                        <span class="fa fa-archive"></span>
                         Skrytka
                     </a>
                 </li>
+
             </ul>
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="task-tab"/>
-                <div role="tabpanel" class="tab-pane fade" id="map-tab"/>
-                <div role="tabpanel" class="tab-pane fade" id="geocache-tab"/>
+
+                <div role="tabpanel" class="more-space-above tab-pane fade in active" id="task-tab"></div>
+                <div role="tabpanel" class="more-space-above tab-pane fade" id="map-tab"></div>
+                <div role="tabpanel" class="more-space-above tab-pane fade" id="geocache-tab"></div>
+
             </div>
         </div>
     </div>
