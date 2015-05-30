@@ -29,12 +29,22 @@ define(['edison', 'location-page', 'locations', 'lodash'],
 
     }
 
+    function asFullUrlHash(pageId) {
+      return '#!locations/' + pageId;
+    }
+
+    function isCurrentPageValid() {
+      var correctPageIds = _.map(_.pluck(locations.all(), 'id'), asFullUrlHash);
+      return _.contains(correctPageIds, window.location.hash);
+    }
+
     function loadDefaultPage() {
-      window.location.href = '#!locations/' + locations.defaultLocation().id
+      window.location.hash = asFullUrlHash(locations.defaultLocation().id);
     }
 
     return {
       configure: configure,
+      isCurrentPageValid: isCurrentPageValid,
       loadDefaultPage: loadDefaultPage
     }
   });

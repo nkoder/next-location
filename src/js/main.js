@@ -18,7 +18,9 @@
   jQuery(document).ready(function () {
     require(['routing'], function (routing) {
       routing.configure();
-      routing.loadDefaultPage();
+      if (!routing.isCurrentPageValid()) {
+        routing.loadDefaultPage();
+      }
     });
   });
 
