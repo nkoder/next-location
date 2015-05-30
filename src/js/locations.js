@@ -2,12 +2,33 @@ define(['lodash'], function (_) {
 
   function all() {
     return [
+
       {
         isDefault: true,
-        id: 'grabki',
-        idOfNextLocation: 'hala',
-        title: 'Grabki',
+        id: 'posag',
+        nextId: 'grabki',
+        title: 'Posag',
         progress: 1,
+        wgs84Coordinate: {
+          latitude: 'N52°12\'10.1"',
+          longitude: 'E20°52\'34.3"'
+        },
+        googleMapsCoordinate: {
+          latitude: '52.2028',
+          longitude: '20.8762'
+
+        },
+        task: {
+          question: 'Ile ząbków ma na głowie monstrum?',
+          correctAnswers: ['20', 'dwadzieścia', 'dwie dziesiątki']
+        }
+      },
+      {
+        previousId: 'posag',
+        id: 'grabki',
+        nextId: 'okna',
+        title: 'Grabki',
+        progress: 2,
         wgs84Coordinate: {
           latitude: 'N52°12\'05.328"',
           longitude: 'E20°51\'53.388"'
@@ -24,11 +45,31 @@ define(['lodash'], function (_) {
         geocacheContentFile: 'geocache-grabki-content.mst'
       },
       {
-        idOfPreviousLocation: 'grabki',
-        id: 'hala',
-        idOfNextLocation: 'klatka',
-        title: 'Hala',
-        progress: 2,
+        previousId: 'grabki',
+        id: 'okna',
+        nextId: 'lasery',
+        title: 'Okna',
+        progress: 3,
+        wgs84Coordinate: {
+          latitude: 'N52°12\'17.6"',
+          longitude: 'E20°52\'21"'
+        },
+        googleMapsCoordinate: {
+          latitude: '52.2049',
+          longitude: '20.8725'
+
+        },
+        task: {
+          question: 'Ile okien ma tunel nad jezdnią od widocznej tutaj strony?',
+          correctAnswers: ['6', 'sześć']
+        }
+      },
+      {
+        previousId: 'okna',
+        id: 'lasery',
+        nextId: 'reklama',
+        title: 'Lasery',
+        progress: 4,
         wgs84Coordinate: {
           latitude: 'N52°12\'19"',
           longitude: 'E20°52\'26"'
@@ -39,16 +80,36 @@ define(['lodash'], function (_) {
 
         },
         task: {
-          question: '???',
-          correctAnswers: ['???', '??']
+          question: 'Miłej zabawy! Po zakończeniu wpisz nazwę artefaktu, który zdobyłeś.',
+          correctAnswers: ['mapa', 'kartka', 'plan']
         }
       },
       {
-        idOfPreviousLocation: 'hala',
+        previousId: 'lasery',
+        id: 'reklama',
+        nextId: 'klatka',
+        title: 'Reklama',
+        progress: 5,
+        wgs84Coordinate: {
+          latitude: 'N52°13\'52.5"',
+          longitude: 'E21°00\'51.1"'
+        },
+        googleMapsCoordinate: {
+          latitude: '52.23125',
+          longitude: '21.0142'
+
+        },
+        task: {
+          question: 'W jaki napis układają się białe figury na brzydkim budynku?',
+          correctAnswers: ['TOTO', 'TO TO', 'T.O.T.O.', 'T O T O']
+        }
+      },
+      {
+        previousId: 'reklama',
         id: 'klatka',
-        idOfNextLocation: 'brzozy',
+        nextId: 'brzozy',
         title: 'Klatka',
-        progress: 3,
+        progress: 6,
         wgs84Coordinate: {
           latitude: 'N52°13\'52"',
           longitude: 'E21°00\'49"'
@@ -59,16 +120,16 @@ define(['lodash'], function (_) {
 
         },
         task: {
-          question: '???',
-          correctAnswers: ['???', '??']
+          question: 'Kieruj się pod adres Widok 18 lok. 6. Po wyjściu stamtąd odpowiedz, jaki przedmiot otrzymałeś.',
+          correctAnswers: ['scyzoryk', 'multitool']
         }
       },
       {
-        idOfPreviousLocation: 'klatka',
+        previousId: 'klatka',
         id: 'brzozy',
-        idOfNextLocation: 'komunizm',
+        nextId: 'dobro',
         title: 'Brzozy',
-        progress: 4,
+        progress: 7,
         wgs84Coordinate: {
           latitude: 'N52°13\'55.9"',
           longitude: 'E21°01\'01.4"'
@@ -79,16 +140,17 @@ define(['lodash'], function (_) {
 
         },
         task: {
-          question: '???',
-          correctAnswers: ['???', '??']
-        }
+          question: 'Jak na imię miał architekt, który zaprojektował Pałac Brzozowskich? Nie, nie zaglądamy do Wikipedii&hellip;',
+          correctAnswers: ['Bronisław', 'Bronek']
+        },
+        geocacheContentFile: 'geocache-brzozy-content.mst'
       },
       {
-        idOfPreviousLocation: 'brzozy',
-        id: 'komunizm',
-        idOfNextLocation: 'chaos',
-        title: 'Komunizm',
-        progress: 5,
+        previousId: 'brzozy',
+        id: 'dobro',
+        nextId: 'chaos',
+        title: 'Dobro',
+        progress: 8,
         wgs84Coordinate: {
           latitude: 'N52°13\'50.4"',
           longitude: 'E21°01\'14.1"'
@@ -96,31 +158,23 @@ define(['lodash'], function (_) {
         googleMapsCoordinate: {
           latitude: '52.230667',
           longitude: '21.020583'
-
         },
         task: {
-          question: '???',
-          correctAnswers: ['???', '??']
-        }
+          question: 'Jak się nazywał rzymski historyk, którego myśl zainspirowała pomysłodawców pomnika.',
+          correctAnswers: ['Tacyt', 'Publiusz', 'Publiusz Korneliusz', 'Publiusz Korneliusz Tacyt', 'Publiusz Tacyt', 'Tacitus', 'Cornelius', 'Cornelius Tacitus']
+        },
+        geocacheContentFile: 'geocache-dobro-content.mst'
       },
       {
-        idOfPreviousLocation: 'komunizm',
+        previousId: 'dobro',
         id: 'chaos',
         title: 'Chaos',
-        progress: 6,
+        progress: 9,
         wgs84Coordinate: {
-          latitude: 'N52°13\'53.4"',
-          longitude: 'E21°01\'19.2"'
+          latitude: 'unknown',
+          longitude: 'unknown'
         },
-        googleMapsCoordinate: {
-          latitude: '52.2315',
-          longitude: '21.0220'
-
-        },
-        task: {
-          question: '???',
-          correctAnswers: ['???', '??']
-        }
+        staticText: 'Jesteś już prawie u celu! Zastanawiasz się może, jakie jest przeznaczenie mapy, którą dostałeś? Twoi dzielni kamraci mają Ci pomóc!'
       }
     ];
   }

@@ -22,23 +22,23 @@
 <div class="row more-space-above">
 
     <div class="col-xs-6">
-        {{#idOfPreviousLocation}}
+        {{#previousId}}
         <a id="go-back" class="btn btn-primary btn-block" role="button"
-           href="#!locations/{{idOfPreviousLocation}}">
+           href="#!locations/{{previousId}}">
             <span class="glyphicon glyphicon-chevron-left"></span>
             Wróć
         </a>
-        {{/idOfPreviousLocation}}
+        {{/previousId}}
     </div>
 
     <div class="col-xs-6">
-        {{#idOfNextLocation}}
+        {{#nextId}}
         <a id="go-next" class="btn btn-primary btn-block" role="button"
-           href="#!locations/{{idOfNextLocation}}" disabled="disabled">
+           href="#!locations/{{nextId}}" disabled="disabled">
             Dalej
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-        {{/idOfNextLocation}}
+        {{/nextId}}
     </div>
 
 </div>
