@@ -15,19 +15,23 @@
 <div class="row more-space-above">
 
     <div class="col-xs-6">
+        {{#idOfPreviousLocation}}
         <a id="go-back" class="btn btn-primary" role="button"
            href="#!locations/{{idOfPreviousLocation}}">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            Poprzednie miejsce
+            Wróć
         </a>
+        {{/idOfPreviousLocation}}
     </div>
 
     <div class="col-xs-6">
+        {{#idOfNextLocation}}
         <a id="go-next" class="btn btn-primary" role="button"
            href="#!locations/{{idOfNextLocation}}" disabled="disabled">
-            Następne miejsce
+            Dalej
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
+        {{/idOfNextLocation}}
     </div>
 
 </div>
