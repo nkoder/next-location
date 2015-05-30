@@ -2,9 +2,20 @@ define(['lodash'], function (_) {
 
   function all() {
     return [
-
       {
         isDefault: true,
+        id: 'start',
+        nextId: 'posag',
+        title: '30 maja',
+        progress: 0,
+        wgs84Coordinate: {
+          latitude: 'N52°14\'06.7"',
+          longitude: 'E21°00\'30.6"'
+        },
+        staticText: 'Witaj! Czas zacząć Twój niepowtarzalny Wieczór Kawalerski! Kliknij \'Dalej\' i lecimy!'
+      },
+      {
+        previousId: 'start',
         id: 'posag',
         nextId: 'grabki',
         title: 'Posag',

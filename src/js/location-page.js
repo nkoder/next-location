@@ -13,6 +13,7 @@ define(['templates', 'lodash', 'sanitizer', 'memory'],
           .load('location-page.mst', location)
           .andInsertInto($(contentElementId))
           .then(function () {
+            enableNextPage();
             actionOnPageLoaded();
           });
       }
@@ -61,10 +62,23 @@ define(['templates', 'lodash', 'sanitizer', 'memory'],
     }
 
     function updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer) {
+      if (hasUserFoundTheAnswer) {
+        enableNextPage();
+      } else {
+        disableNextPage();
+      }
       $('#go-next').attr('disabled', !hasUserFoundTheAnswer);
       $('#user-answer')
         .closest('.form-group')
         .toggleClass('has-success', hasUserFoundTheAnswer);
+    }
+
+    function enableNextPage() {
+      $('#go-next').attr('disabled', false);
+    }
+
+    function disableNextPage() {
+      $('#go-next').attr('disabled', true);
     }
 
     function userAnswerElement() {
