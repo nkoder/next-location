@@ -171,10 +171,10 @@ define(['lodash'], function (_) {
         title: 'Chaos',
         progress: 9,
         wgs84Coordinate: {
-          latitude: 'unknown',
-          longitude: 'unknown'
+          latitude: 'brak danych',
+          longitude: 'brak danych'
         },
-        staticText: 'Jesteś już prawie u celu! Zastanawiasz się może, jakie jest przeznaczenie mapy, którą dostałeś? Twoi dzielni kamraci mają Ci pomóc!'
+        staticText: 'Jesteś już prawie u celu. Zastanawiasz się może, jakie jest przeznaczenie mapy, którą dostałeś? Twoi dzielni kamraci mogą Ci pomóc!'
       }
     ];
   }

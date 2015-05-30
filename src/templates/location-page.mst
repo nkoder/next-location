@@ -45,6 +45,7 @@
 <div class="row more-space-above">
     <div class="col-xs-12">
 
+        {{^staticText}}
         <div role="tabpanel" id="super-tabs">
             <ul class="nav nav-tabs" role="tablist">
 
@@ -94,5 +95,12 @@
 
             </div>
         </div>
+        {{/staticText}}
+
+        {{#staticText}}
+        <div class="jumbotron">
+            <p>{{staticText}}</p>
+        </div>
+        {{/staticText}}
     </div>
 </div>
