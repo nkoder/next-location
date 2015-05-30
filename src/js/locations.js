@@ -140,7 +140,7 @@ define(['lodash'], function (_) {
 
         },
         task: {
-          question: 'Jak na imię miał architekt, który zaprojektował Pałac Brzozowskich? Nie, nie zaglądamy do Wikipedii&hellip;',
+          question: 'Jak na imię miał architekt, który zaprojektował Pałac Brzozowskich? Nie, nie zaglądamy do Wikipedii…',
           correctAnswers: ['Bronisław', 'Bronek']
         },
         geocacheContentFile: 'geocache-brzozy-content.mst'
