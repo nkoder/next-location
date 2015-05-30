@@ -11,6 +11,12 @@
             </small>
         </h4>
 
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+
     </div>
 </div>
 <div class="row more-space-above">
@@ -44,23 +50,23 @@
 
                 <li role="presentation" class="active"
                     style="width:
-                    {{#geocacheContentFile}}36%{{/geocacheContentFile}}
-                    {{^geocacheContentFile}}50%{{/geocacheContentFile}}
-                    ">
-                    <a href="#task-tab" aria-controls="task" role="tab" data-toggle="tab">
-                        <span class="fa fa-question"></span>
-                        Zagadka
-                    </a>
-                </li>
-
-                <li role="presentation"
-                    style="width:
                     {{#geocacheContentFile}}29%{{/geocacheContentFile}}
                     {{^geocacheContentFile}}50%{{/geocacheContentFile}}
                     ">
                     <a href="#map-tab" aria-controls="map" role="tab" data-toggle="tab">
                         <span class="fa fa-map-marker"></span>
                         Mapa
+                    </a>
+                </li>
+
+                <li role="presentation"
+                    style="width:
+                    {{#geocacheContentFile}}36%{{/geocacheContentFile}}
+                    {{^geocacheContentFile}}50%{{/geocacheContentFile}}
+                    ">
+                    <a href="#task-tab" aria-controls="task" role="tab" data-toggle="tab">
+                        <span class="fa fa-question"></span>
+                        Zagadka
                     </a>
                 </li>
 
@@ -78,9 +84,9 @@
             </ul>
             <div class="tab-content">
 
-                <div role="tabpanel" class="more-space-above tab-pane fade in active" id="task-tab"></div>
+                <div role="tabpanel" class="more-space-above tab-pane fade in active" id="map-tab"></div>
 
-                <div role="tabpanel" class="more-space-above tab-pane fade" id="map-tab"></div>
+                <div role="tabpanel" class="more-space-above tab-pane fade" id="task-tab"></div>
 
                 {{#geocacheContentFile}}
                 <div role="tabpanel" class="more-space-above tab-pane fade" id="geocache-tab"></div>

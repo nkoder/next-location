@@ -9,10 +9,46 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">-->
     <link rel="stylesheet" href="css/bootstrap-paper.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="css/main.css"/>
+
+
+    <script>
+        pos1 = -34.397;
+        pos2 = 150.644;
+
+        function initialize() {
+
+            var mapOptions = {
+                zoom: 16,
+                disableDefaultUI: true,
+                center: new google.maps.LatLng(pos1, pos2),
+                panControl: true,
+                zoomControl: true,
+                scaleControl: true
+            };
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            new google.maps.Marker({
+                position: new google.maps.LatLng(pos1, pos2),
+                map: map,
+                title: 'sdssd'
+            })
+        }
+
+        function loadScriptFor(a, b) {
+            pos1 = a;
+            pos2 = b;
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+                '&signed_in=false&callback=initialize';
+            document.body.appendChild(script);
+        }
+
+    </script>
+
+
 </head>
 <body>
 

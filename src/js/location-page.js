@@ -23,6 +23,7 @@ define(['templates', 'lodash', 'sanitizer', 'memory'],
           }
         })
         .then(function () {
+          loadScriptFor(location.googleMapsCoordinate.latitude, location.googleMapsCoordinate.longitude);
           userAnswerElement().bind('input', onUserAnswerChangedAction);
           userAnswerElement().val(memory.read(location.id));
           onUserAnswerChangedAction();
