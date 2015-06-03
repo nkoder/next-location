@@ -1,15 +1,18 @@
 define(function () {
 
+  var maxProgressValue = 100;
+
+  function setMaxValueTo(maxValue) {
+    maxProgressValue = maxValue;
+  }
+
   function updateTo(currentValue) {
-    return {
-      outOf: function (maxValue) {
-        var asPercentage = (currentValue / maxValue) * 100;
-        $('#progress-bar').css('width', asPercentage + '%');
-      }
-    };
+    var asPercentage = (currentValue / maxProgressValue) * 100;
+    $('#progress-bar').css('width', asPercentage + '%');
   }
 
   return {
+    setMaxValueTo: setMaxValueTo,
     updateTo: updateTo
   };
 });

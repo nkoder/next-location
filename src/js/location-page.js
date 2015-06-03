@@ -1,7 +1,7 @@
-define(['templates', 'lodash', 'sanitizer', 'memory'],
-  function (templates, _, sanitizer, memory) {
+define(['templates', 'lodash', 'sanitizer', 'memory', 'progress'],
+  function (templates, _, sanitizer, memory, progress) {
 
-    function loadInto(contentElementId, location, actionOnPageLoaded) {
+    function loadInto(contentElementId, location) {
       if (!!location.staticText) {
         loadPageWithStaticText();
       } else {
@@ -14,7 +14,7 @@ define(['templates', 'lodash', 'sanitizer', 'memory'],
           .andInsertInto($(contentElementId))
           .then(function () {
             enableNextPage();
-            actionOnPageLoaded();
+            updateProgress();
           });
       }
 
@@ -46,7 +46,7 @@ define(['templates', 'lodash', 'sanitizer', 'memory'],
             userAnswerElement().bind('input', onUserAnswerChangedAction);
             userAnswerElement().val(memory.read(location.id));
             onUserAnswerChangedAction();
-            actionOnPageLoaded();
+            updateProgress();
           });
       }
 
@@ -58,6 +58,10 @@ define(['templates', 'lodash', 'sanitizer', 'memory'],
           return foundTheAnswer || (correctAnswer === userAnswer);
         }, false);
         updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer);
+      }
+
+      function updateProgress() {
+        progress.updateTo(location.progress);
       }
     }
 

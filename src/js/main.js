@@ -16,11 +16,12 @@
   });
 
   jQuery(document).ready(function () {
-    require(['routing'], function (routing) {
+    require(['routing', 'progress', 'locations'], function (routing, progress, locations) {
       routing.configure();
       if (!routing.isCurrentPageValid()) {
         routing.loadDefaultPage();
       }
+      progress.setMaxValueTo(locations.all().length - 1);
     });
   });
 
