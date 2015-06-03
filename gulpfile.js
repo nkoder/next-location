@@ -8,9 +8,9 @@ var paths = {
   cname: 'src/CNAME',
   index: 'src/index.html',
   robots: 'src/robots.txt',
-  js: 'src/js/*.js',
-  css: 'src/css/*.css',
-  templates: 'src/templates/*.mst',
+  js: 'src/js/**/*.js',
+  css: 'src/css/**/*.css',
+  templates: 'src/templates/**/*.mst',
   bower: [
     'src/bower_components/bootstrap/dist/css/bootstrap.css',
     'src/bower_components/bootstrap/dist/css/bootstrap.css.map',

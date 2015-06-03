@@ -1,32 +1,21 @@
-define(['templates', 'lodash', 'sanitizer', 'memory', 'progress'],
-  function (templates, _, sanitizer, memory, progress) {
+define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab'],
+  function (templates, _, sanitizer, memory, progress, mapTab) {
 
-    function loadInto(contentElementId, location) {
+    function loadInto(element, location) {
       $.when(
         templates.load('location-page.mst', location)
       ).then(function (html) {
-          $(contentElementId).html(html);
+          element.html(html);
           progress.updateTo(location.progress);
           if (!!location.staticText) {
             enableNextPage();
           } else {
-            loadMapTabFor(location);
+            mapTab.loadInto($('#map-tab'), location);
             loadTaskTabFor(location);
             if (!!location.geocacheContentFile) {
               loadGeocacheTabFor(location);
             }
           }
-        });
-    }
-
-    function loadMapTabFor(location) {
-      $.when(
-        templates.load('map.mst')
-      ).then(function (html) {
-          $('#map-tab').html(html);
-          globalGoogleMapsHelper.loadGoogleMapsFor(
-            location.googleMapsCoordinate.latitude,
-            location.googleMapsCoordinate.longitude);
         });
     }
 

@@ -12,7 +12,7 @@ define(['edison', 'location-page', 'locations', 'lodash'],
         section.createRoute({
           'name': location.id,
           'callback': function () {
-            locationPage.loadInto('#location-page', location);
+            locationPage.loadInto($('#location-page'), location);
           }
         });
       });
