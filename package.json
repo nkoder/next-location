@@ -1,5 +1,6 @@
 {
   "name": "next-location",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "bower": "^1.4.1",
