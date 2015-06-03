@@ -35,9 +35,13 @@
       scaleControl: true
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), options);
-    new google.maps.Marker({
+    var marker = new google.maps.Marker({
       position: position,
+      url: 'https://maps.google.com/?q=' + latitude + '+' + longitude,
       map: map
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+      window.open(marker.url);
     });
   }
 
