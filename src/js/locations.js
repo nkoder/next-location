@@ -53,7 +53,7 @@ define(['lodash'], function (_) {
           question: 'Jak nazywa się fajna figura, która dwa razy pojawia się na ciekawej metalowej furtce?',
           correctAnswers: ['romb', 'rąb', 'rołb']
         },
-        geocacheContentFile: 'geocache-grabki-content.mst'
+        geocacheContentFile: 'geocache/geocache-grabki-content.mst'
       },
       {
         previousId: 'grabki',
@@ -154,7 +154,7 @@ define(['lodash'], function (_) {
           question: 'Jak na imię miał architekt, który zaprojektował Pałac Brzozowskich? Nie, nie zaglądamy do Wikipedii…',
           correctAnswers: ['Bronisław', 'Bronek']
         },
-        geocacheContentFile: 'geocache-brzozy-content.mst'
+        geocacheContentFile: 'geocache/geocache-brzozy-content.mst'
       },
       {
         previousId: 'brzozy',
@@ -174,7 +174,7 @@ define(['lodash'], function (_) {
           question: 'Jak się nazywał rzymski historyk, którego myśl zainspirowała pomysłodawców pomnika.',
           correctAnswers: ['Tacyt', 'Publiusz', 'Publiusz Korneliusz', 'Publiusz Korneliusz Tacyt', 'Publiusz Tacyt', 'Tacitus', 'Cornelius', 'Cornelius Tacitus']
         },
-        geocacheContentFile: 'geocache-dobro-content.mst'
+        geocacheContentFile: 'geocache/geocache-dobro-content.mst'
       },
       {
         previousId: 'dobro',

@@ -3,12 +3,9 @@ define(['templates'],
 
     function loadInto(element, location) {
       $.when(
-        templates.load('map/map.mst')
+        templates.load('page/page-header.mst', location)
       ).then(function (html) {
           element.html(html);
-          globalGoogleMapsHelper.loadGoogleMapsFor(
-            location.googleMapsCoordinate.latitude,
-            location.googleMapsCoordinate.longitude);
         });
     }
 

@@ -1,9 +1,9 @@
-define(['templates', 'util/memory', 'util/sanitizer', 'navigation'],
+define(['templates', 'util/memory', 'util/sanitizer', 'page/navigation'],
   function (templates, memory, sanitizer, navigation) {
 
     function loadInto(element, location) {
       $.when(
-        templates.load('task-form.mst', location)
+        templates.load('task/task-form.mst', location)
       ).then(function (html) {
           element.html(html);
           userAnswerElement().bind('input', onUserAnswerChangedAction);

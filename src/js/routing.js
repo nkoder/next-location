@@ -1,4 +1,4 @@
-define(['edison', 'location-page', 'locations', 'lodash'],
+define(['edison', 'page/location-page', 'locations', 'lodash'],
   function (Edison, locationPage, locations, _) {
 
     function configure() {
