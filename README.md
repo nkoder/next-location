@@ -2,10 +2,22 @@
 
 Simple web page for city rally. Show coordinates of location and ask related question to unlock next location.
 
+If you want to check how this website is working, sample correct answers are:
+
+1. `#!locations/posag` --> `20`
+2. `#!locations/grabki` --> `romb`
+3. `#!locations/okna` --> `6`
+4. `#!locations/lasery` --> `mapa`
+4. `#!locations/reklama` --> `TOTO`
+5. `#!locations/klatka` --> `scyzoryk `
+6. `#!locations/brzozy` --> `Bronisław`
+7. `#!locations/dobro` --> `Tacyt`
+
 Important notes:
 
 * the main language of the page is Polish
 * `30 maja` is a date written in Polish; it is used on the page as a title of the event on which page is supposed to be used
+
 
 ## Setup project for development (on Ubuntu 14.10)
 
