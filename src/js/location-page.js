@@ -1,5 +1,5 @@
-define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab'],
-  function (templates, _, sanitizer, memory, progress, mapTab) {
+define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab', 'geocache/geocache-tab'],
+  function (templates, _, sanitizer, memory, progress, mapTab, geocacheTab) {
 
     function loadInto(element, location) {
       $.when(
@@ -13,7 +13,7 @@ define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab']
             mapTab.loadInto($('#map-tab'), location);
             loadTaskTabFor(location);
             if (!!location.geocacheContentFile) {
-              loadGeocacheTabFor(location);
+              geocacheTab.loadInto($('#geocache-tab'), location);
             }
           }
         });
@@ -38,14 +38,6 @@ define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab']
         }, false);
         updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer);
       }
-    }
-
-    function loadGeocacheTabFor(location) {
-      $.when(
-        templates.load(location.geocacheContentFile)
-      ).then(function (html) {
-          $('#geocache-tab').html(html)
-        });
     }
 
     function updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer) {
