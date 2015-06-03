@@ -2,53 +2,43 @@ define(['templates', 'lodash', 'sanitizer', 'memory', 'progress'],
   function (templates, _, sanitizer, memory, progress) {
 
     function loadInto(contentElementId, location) {
-      if (!!location.staticText) {
-        loadPageWithStaticText();
-      } else {
-        loadPageWithTask();
-      }
-
-      function loadPageWithStaticText() {
-        templates
-          .load('location-page.mst', location)
-          .andInsertInto($(contentElementId))
-          .then(function () {
+      $.when(
+        templates.load('location-page.mst', location)
+      ).then(function (html) {
+          $(contentElementId).html(html);
+          progress.updateTo(location.progress);
+          if (!!location.staticText) {
             enableNextPage();
-            updateProgress();
-          });
-      }
-
-      function loadPageWithTask() {
-        templates
-          .load('location-page.mst', location)
-          .andInsertInto($(contentElementId))
-          .then(function () {
-            return templates
-              .load('task-form.mst', location)
-              .andInsertInto($('#task-tab'));
-          })
-          .then(function () {
-            return templates
-              .load('map.mst')
-              .andInsertInto($('#map-tab'));
-          })
-          .then(function () {
+          } else {
+            loadMapTabFor(location);
+            loadTaskTabFor(location);
             if (!!location.geocacheContentFile) {
-              templates
-                .load(location.geocacheContentFile)
-                .andInsertInto($('#geocache-tab'));
+              loadGeocacheTabFor(location);
             }
-          })
-          .then(function () {
-            globalGoogleMapsHelper.loadGoogleMapsFor(
-              location.googleMapsCoordinate.latitude,
-              location.googleMapsCoordinate.longitude);
-            userAnswerElement().bind('input', onUserAnswerChangedAction);
-            userAnswerElement().val(memory.read(location.id));
-            onUserAnswerChangedAction();
-            updateProgress();
-          });
-      }
+          }
+        });
+    }
+
+    function loadMapTabFor(location) {
+      $.when(
+        templates.load('map.mst')
+      ).then(function (html) {
+          $('#map-tab').html(html);
+          globalGoogleMapsHelper.loadGoogleMapsFor(
+            location.googleMapsCoordinate.latitude,
+            location.googleMapsCoordinate.longitude);
+        });
+    }
+
+    function loadTaskTabFor(location) {
+      $.when(
+        templates.load('task-form.mst', location)
+      ).then(function (html) {
+          $('#task-tab').html(html);
+          userAnswerElement().bind('input', onUserAnswerChangedAction);
+          userAnswerElement().val(memory.read(location.id));
+          onUserAnswerChangedAction();
+        });
 
       function onUserAnswerChangedAction() {
         memory.write(location.id, userAnswerElement().val());
@@ -59,10 +49,14 @@ define(['templates', 'lodash', 'sanitizer', 'memory', 'progress'],
         }, false);
         updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer);
       }
+    }
 
-      function updateProgress() {
-        progress.updateTo(location.progress);
-      }
+    function loadGeocacheTabFor(location) {
+      $.when(
+        templates.load(location.geocacheContentFile)
+      ).then(function (html) {
+          $('#geocache-tab').html(html)
+        });
     }
 
     function updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer) {
