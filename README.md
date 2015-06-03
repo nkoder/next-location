@@ -2,6 +2,8 @@
 
 Simple web page for city rally. Show coordinates of location and ask related question to unlock next location.
 
+Main device for using this web page is Google Nexus 4 smartphone.
+
 If you want to check how this website is working, sample correct answers are:
 
 1. `#!locations/posag` --> `20`
