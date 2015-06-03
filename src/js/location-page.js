@@ -1,5 +1,5 @@
-define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab', 'geocache/geocache-tab'],
-  function (templates, _, sanitizer, memory, progress, mapTab, geocacheTab) {
+define(['templates', 'progress', 'navigation', 'map/map-tab', 'task/task-tab', 'geocache/geocache-tab'],
+  function (templates, progress, navigation, mapTab, taskTab, geocacheTab) {
 
     function loadInto(element, location) {
       $.when(
@@ -8,60 +8,15 @@ define(['templates', 'lodash', 'sanitizer', 'memory', 'progress', 'map/map-tab',
           element.html(html);
           progress.updateTo(location.progress);
           if (!!location.staticText) {
-            enableNextPage();
+            navigation.enableNextPage();
           } else {
             mapTab.loadInto($('#map-tab'), location);
-            loadTaskTabFor(location);
+            taskTab.loadInto($('#task-tab'), location);
             if (!!location.geocacheContentFile) {
               geocacheTab.loadInto($('#geocache-tab'), location);
             }
           }
         });
-    }
-
-    function loadTaskTabFor(location) {
-      $.when(
-        templates.load('task-form.mst', location)
-      ).then(function (html) {
-          $('#task-tab').html(html);
-          userAnswerElement().bind('input', onUserAnswerChangedAction);
-          userAnswerElement().val(memory.read(location.id));
-          onUserAnswerChangedAction();
-        });
-
-      function onUserAnswerChangedAction() {
-        memory.write(location.id, userAnswerElement().val());
-        var userAnswer = sanitizer.sanitizeText(userAnswerElement().val());
-        var correctAnswers = _.map(location.task.correctAnswers, sanitizer.sanitizeText);
-        var hasUserFoundTheAnswer = _.reduce(correctAnswers, function (foundTheAnswer, correctAnswer) {
-          return foundTheAnswer || (correctAnswer === userAnswer);
-        }, false);
-        updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer);
-      }
-    }
-
-    function updatePageAccordingToAnswerCorrectness(hasUserFoundTheAnswer) {
-      if (hasUserFoundTheAnswer) {
-        enableNextPage();
-      } else {
-        disableNextPage();
-      }
-      $('#go-next').attr('disabled', !hasUserFoundTheAnswer);
-      $('#user-answer')
-        .closest('.form-group')
-        .toggleClass('has-success', hasUserFoundTheAnswer);
-    }
-
-    function enableNextPage() {
-      $('#go-next').attr('disabled', false);
-    }
-
-    function disableNextPage() {
-      $('#go-next').attr('disabled', true);
-    }
-
-    function userAnswerElement() {
-      return $('#user-answer');
     }
 
     return {

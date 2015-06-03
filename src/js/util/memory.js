@@ -1,4 +1,4 @@
-define(['logger', 'local-storage', 'transient-storage'],
+define(['util/logger', 'util/local-storage', 'util/transient-storage'],
   function (logger, localStorage, transientStorage) {
 
     var storage = chooseStorage();
