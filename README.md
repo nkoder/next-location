@@ -4,7 +4,7 @@ Simple web page for city rally. Show coordinates of location and ask related que
 
 Main device for using this web page is Google Nexus 4 smartphone.
 
-If you want to check how this website is working, you can go to [http://nkoder.github.io/next-location/]() and use sample answers:
+If you want to check how this website is working, you can go to [http://nkoder.github.io/next-location](http://nkoder.github.io/next-location) and use sample answers:
 
 1. `#!locations/posag` --> `20`
 2. `#!locations/grabki` --> `romb`
