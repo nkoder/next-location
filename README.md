@@ -23,27 +23,17 @@ Important notes:
 
 ## Setup project for development (on Ubuntu 14.10)
 
-From the directory of the project:
+Install Node.js 0.10 or newer. Then run following command from the project directory:
 
-1. `sudo apt-get install nodejs` to install `npm` globally
+1. `npm install` to install dependencies
 
-2. `sudo npm install -g bower` to install `bower` globally
-
-3. `npm install --global gulp` to install `gulp` globally
-
-4. `npm install` to install Node dependencies
-
-5. `bower install` to install Bower dependencies
-
-6. `gulp` to prepare project in `dist` folder and run server with it under [http://localhost:8000/index.html]()
+2. `npm start` to prepare project in `dist` folder and serve it under [http://localhost:8000/index.html]()
 
 ## Deploy to Github Pages
 
-From the directory of the project:
-
-1. `gulp deploy:gh-pages`
+From the project directory run `npm run deploy`
      
-2. Last command ends with strange error. A workaround is to force push.
+This command is not polished and typically an error occurs. A workaround is to force push.
 
         cd .publish
         git push --force origin gh-pages

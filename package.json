@@ -13,6 +13,8 @@
     "main-bower-files": "2.8.0"
   },
   "scripts": {
-    "server": "./node_modules/http-server/bin/http-server"
+    "postinstall": "bower install",
+    "start": "gulp",
+    "deploy": "gulp deploy:gh-pages"
   }
 }
